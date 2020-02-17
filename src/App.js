@@ -2,6 +2,7 @@ import React from 'react';
 
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+import './components/TodoComponents/Todo.css';
 
 const items = [];
 
@@ -58,8 +59,8 @@ class App extends React.Component {
   render() {
     console.log('rendering...');
     return (
-      <div>
-        <div>
+      <div className='App'>
+        <div className='Header'>
           <h1>ToDo List</h1>
           <TodoForm addItem={this.addItem} />
         </div>
@@ -67,6 +68,7 @@ class App extends React.Component {
           items={this.state.items}
           toggleItem={this.toggleItem}
           clearCompleted={this.clearCompleted}
+          className='List'
         />
       </div>
     );
